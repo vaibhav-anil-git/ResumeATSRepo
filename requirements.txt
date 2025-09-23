@@ -1,0 +1,21 @@
+# Crew AI Core Library
+crewai>=0.80.0  # Provides functionality for managing and interacting with the Crew AI platform.
+
+# Crew AI Tools (Utilities and additional features)
+crewai-tools>=0.12.0  # Tools and utilities for working with the Crew AI platform and its features.like automating workflows,error handling and utility functions for pre and postprocessing of data
+
+# Environment Management
+python-dotenv>=1.0.1  # Loads environment variables from a .env file into the environment.
+
+# HTTP Requests
+requests>=2.31.0  # Simplifies HTTP requests and interaction with APIs.
+
+# File Parsing Libraries
+pypdf>=4.2.0  # Library for working with and manipulating PDF files.
+python-docx>=1.1.2  # Allows reading, writing, and manipulating Word documents.
+
+# Web UI Framework
+streamlit>=1.36.0  # Framework for building interactive web apps with Python.
+
+# Data Validation and Settings Management
+pydantic>=2.8.2  # Data validation and settings management using Python type annotations.

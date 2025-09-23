@@ -1,0 +1,33 @@
+parse_resume_task:
+  description: >
+    Clean this resume text quickly.
+    Remove artifacts, normalize bullets to '-', keep all content. Be fast and direct.
+  expected_output: >
+    Clean resume text with proper structure.
+  agent: parser_agent
+
+rewrite_for_ats_task:
+  description: >
+    Rewrite resume for a given job.
+    Match keywords, use action verbs, add metrics. Target 80+ ATS score. Be direct and fast.
+  expected_output: >
+    ATS-optimized resume with keyword placement and metrics.
+  agent: ats_writer_agent
+
+refine_bullets_task:
+  description: >
+    Polish these bullets with action verbs and metrics.
+    Add strong verbs and numbers. Be fast and direct.
+  expected_output: >
+    Resume with enhanced bullet points and metrics.
+  agent: refiner_agent
+
+evaluate_ats_task:
+  description: >
+    Score a resume for a given job.
+    Rate 1-5: keywords, structure, metrics, verbs, format.
+    Return JSON with overall_score (0-100), breakdown, missing_keywords, quick_wins.
+  expected_output: >
+    JSON evaluation with scores and recommendations.
+  agent: evaluator_agent
+
