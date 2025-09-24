@@ -320,5 +320,5 @@ class ResumeATSCrew:
     print(technical_questions)
 
     print("Pipeline execution completed.")
-    return clean_resume
+    return clean_resume, rewritten_resume, final_resume, evaluation, general_questions, managerial_questions, hr_questions, behavioral_questions, technical_questions
     
