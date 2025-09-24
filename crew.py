@@ -7,7 +7,6 @@ from crewai import Agent
 import os
 
 # Use your working OpenAI key
-os.environ["OPENAI_API_KEY"] = "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"
 
 @CrewBase
 class ResumeATSCrew:
