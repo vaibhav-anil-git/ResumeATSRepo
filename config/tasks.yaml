@@ -1,6 +1,6 @@
 parse_resume_task:
   description: >
-    Clean this resume text quickly.
+    Clean this resume text quickly \n\n{truncated_text}\n\n.
     Remove artifacts, normalize bullets to '-', keep all content. Be fast and direct.
   expected_output: >
     Clean resume text with proper structure.
@@ -31,3 +31,41 @@ evaluate_ats_task:
     JSON evaluation with scores and recommendations.
   agent: evaluator_agent
 
+general_question_task:
+  description: >
+    Given the candidate’s resume, generate 5 general interview questions exploring career journey, strengths, and overall experience.
+    Questions should be open-ended, not role-specific, and avoid technical depth.
+  expected_output: >
+    5 open-ended general interview questions that help understand the candidate’s background.
+  agent: general_question_agent
+
+managerial_question_task:
+  description: >
+    Based on the resume, generate 5 tough managerial questions focusing on leadership, decision-making, conflict resolution, and client management.
+    Questions should assess leadership skills and handling pressure.
+  expected_output: >
+    5 challenging managerial questions exploring leadership and stakeholder management.
+  agent: managerial_question_agent
+
+hr_question_task:
+  description: >
+    Using the resume as context, generate 5 HR questions exploring motivation, cultural fit, salary expectations, career aspirations, and work preferences.
+    Avoid technical details.
+  expected_output: >
+    5 HR questions about motivation, culture fit, and career goals.
+  agent: hr_question_agent
+
+behavioral_question_task:
+  description: >
+    Given the resume, generate 5 STAR-based behavioral questions focusing on past challenges, team interactions, and problem-solving.
+  expected_output: >
+    5 behavioral interview questions based on Situation, Task, Action, Result framework.
+  agent: behavioral_question_agent
+
+technical_question_task:
+  description: >
+    Based on the candidate’s resume, generate 5 challenging technical questions tailored to their skills and domain.
+    Focus on applied knowledge and scenario-based answers.
+  expected_output: >
+    5 technical questions that test problem-solving and applied knowledge.
+  agent: technical_question_agent
