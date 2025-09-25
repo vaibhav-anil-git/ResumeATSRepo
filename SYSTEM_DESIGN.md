@@ -30,6 +30,10 @@ The ResumeATS system is an intelligent resume optimization and interview prepara
 - **Resume Enhancement**: Adds metrics, action verbs, and keyword optimization
 - **Evaluation System**: Provides detailed scoring and improvement recommendations
 
+### System Input/Output
+- **Input**: Raw resume text, job title, and job description
+- **Output**: ATS-optimized resume, compatibility score, and 25 tailored interview questions across 5 categories
+
 ## Architecture
 
 ### High-Level Architecture
@@ -61,6 +65,11 @@ The system follows a **Multi-Agent Orchestration Pattern** built on the CrewAI f
 └─────────────────────────────────────────────────────────────┘
 ```
 
+### Core System Components
+1. **Agent Orchestration Layer**: Manages 9 specialized AI agents
+2. **Task Execution Layer**: Handles sequential and parallel task processing
+3. **Configuration Management**: YAML-based agent and task definitions
+
 ### Architectural Patterns Used
 1. **Agent-Based Architecture**: Each specialized agent handles specific domain tasks
 2. **Sequential Processing**: Tasks executed in defined order with dependencies
@@ -72,7 +81,6 @@ The system follows a **Multi-Agent Orchestration Pattern** built on the CrewAI f
 ### File Organization
 ```
 ResumeATSRepo/
-├── main.py                 # Entry point with sample data
 ├── crew.py                 # Core system logic and agent orchestration
 ├── requirements.txt        # Python dependencies
 ├── README.md              # Project documentation
@@ -83,14 +91,7 @@ ResumeATSRepo/
 
 ### Key Components
 
-#### 1. Main Entry Point (`main.py`)
-- **Purpose**: System entry point with sample data
-- **Functionality**: 
-  - Provides sample resume text and job description
-  - Initializes the ResumeATSCrew and triggers the pipeline
-  - Demonstrates system usage
-
-#### 2. Core System Logic (`crew.py`)
+#### 1. Core System Logic (`crew.py`)
 - **Class**: `ResumeATSCrew`
 - **Design Pattern**: Factory + Builder patterns
 - **Key Features**:
@@ -99,7 +100,7 @@ ResumeATSRepo/
   - Task factory methods
   - Pipeline orchestration
 
-#### 3. Configuration Files
+#### 2. Configuration Files
 - **`agents.yaml`**: Defines 9 specialized agents with roles, goals, and LLM parameters
 - **`tasks.yaml`**: Template definitions for task descriptions and expected outputs
 
@@ -353,6 +354,15 @@ result = crew.kickoff()
 
 ## Conclusion
 
-The ResumeATS system demonstrates a well-architected, agent-based approach to resume optimization and interview preparation. The use of CrewAI framework provides a robust foundation for multi-agent coordination, while the modular design enables easy maintenance and feature expansion.
+The ResumeATS system demonstrates a well-architected, agent-based approach to resume optimization and interview preparation. The system's core strength lies in its modular, configuration-driven architecture built on the CrewAI framework, which provides:
 
-The system effectively addresses the core problem of ATS optimization while providing comprehensive interview preparation tools. The configuration-driven approach and specialized agents create a maintainable and extensible solution suitable for both individual users and enterprise applications.
+### Key Architectural Benefits
+- **Specialized Agent Design**: Each agent focuses on a specific domain expertise
+- **Scalable Pipeline**: Sequential processing for dependencies, parallel execution for independent tasks  
+- **Configuration-Driven Flexibility**: Easy modification and extension through YAML configurations
+- **Performance Optimization**: Text truncation, timeout controls, and single-iteration processing
+
+### System Effectiveness
+The system effectively addresses the core problem of ATS optimization while providing comprehensive interview preparation tools. The multi-agent approach ensures domain expertise in each processing stage, from resume parsing through question generation, creating a maintainable and extensible solution suitable for both individual users and enterprise applications.
+
+The architecture's separation of concerns, combined with the CrewAI framework's orchestration capabilities, positions the system well for future enhancements and scaling requirements.
